@@ -1,0 +1,251 @@
+/* styles.css */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    margin: 0;
+    color: #333;
+}
+
+#main-menu {
+    display: flex;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    width: 100%;
+    height: 100%;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 3em;
+    color: #003366;
+    text-shadow: 2px 2px #f0f0f0;
+}
+
+#units {
+    display: grid;
+    width: 95%;
+    justify-content: center;
+    grid-template-columns: repeat(4, 1fr); /* 4 columns grid */
+    gap: 15px; /* Spacing between buttons */
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    padding: 15px 20px; /* Adjusted padding for better spacing */
+    font-size: 18px; /* Font size for better readability */
+    border: none;
+    border-radius: 8px; /* Slightly more rounded corners */
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center the text */
+}
+
+.unit-title {
+    font-size: 18px; /* Adjusted main text size */
+    margin-top: 10px; /* Reduced margin between title and description */
+}
+
+.unit-desc {
+    font-size: 12px; /* Adjusted description text size */
+    color: #ffffff; /* Description text color */
+    margin-bottom: 10px
+}
+
+button:hover {
+    background-color: #003f7d; /* Darker shade for hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+#game {
+    flex: 1;                   /* Game section takes up 50% of the width */
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-height: 80%;
+    flex-wrap: wrap;
+}
+
+#hint {
+    white-space: normal;   /* Allows the text to wrap to the next line */
+    word-wrap: break-word; /* Break long words if needed */
+    max-width: 85%;        /* Limit the width of the text */
+    margin: 20px auto;     /* Center the hint text with some margin */
+    text-align: center;    /* Center-align the text */
+    font-size: 1.1em;      /* Increase font size for better readability */
+    font-family: 'Arial', sans-serif;  /* Use a clean, modern font */
+    color: #333;           /* Set a subtle dark color for the text */
+    background-color: #f9f9f9;  /* Add a soft background color */
+    padding: 10px;         /* Add padding around the text */
+    border-radius: 8px;    /* Add rounded corners */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);  /* Add a light shadow */
+}
+
+#game-container {
+    display: flex;             /* Use flexbox to position children side by side */
+    justify-content: space-between; /* Ensure space between game and word bank */
+    width: 95%;               /* Take up the full width of the screen */
+    height: calc(100vh - 120px);
+    align-items: stretch;
+    flex-wrap: wrap;
+    display: none;
+}
+
+#word-bank-container {
+    flex: 0.5;
+    flex-direction: column;
+    margin-top: 10px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f0f0f0;
+    max-width: 90%;
+    max-height: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    overflow-y: auto;   /* Add scroll if content overflows */
+}
+
+.word-bank-title {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.word-bank-list {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.word-bank-list li {
+    margin-bottom: 5px;
+}
+
+#word {
+    font-size: 28px;
+    letter-spacing: 10px;
+    margin-top: 30px;
+}
+
+#guess {
+    padding: 10px;
+    font-size: 18px;
+    width: 200px;
+    text-align: center;
+    border: 2px solid #0056b3;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+#progress-container {
+    width: 100%; /* Ensure this is set to a fixed width */
+    max-width: 500px;
+    min-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #f3f3f3;
+    border: 1px solid #ccc;
+    margin-top: 20px;
+    height: 20px; /* Ensure this height stays consistent */
+    overflow: hidden; /* Prevents overflow from affecting layout */
+    position: relative; /* Ensures child element positioning works well */
+}
+
+#progress-bar {
+    width: 0%; /* Start at 0% width */
+    height: 100%; /* Ensure it matches the height of the container */
+    background-color: #4caf50; /* The fill color */
+    transition: width 0.3s ease; /* Smooth transition for width changes */
+}
+
+.back-button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 14px;
+    background-color: transparent;
+    color: #0056b3;
+    border: 2px solid #0056b3; /* Add border for visibility */
+    border-radius: 5px; /* Ensure it matches other buttons */
+    padding: 10px 20px; /* Add some padding for a better look */
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.back-button:hover {
+    background-color: #003f7d;
+    color: white;
+}
+
+#message, #attempts {
+    font-size: 18px;
+}
+
+#multi-unit-selection {
+    align-self: center;  /* Prevent it from stretching to the bottom */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 5px;
+}
+
+#multi-unit-selection h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+#unit-selection-form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#unit-selection-form label {
+    font-size: 18px;
+}
+
+#multi-unit-selection button {
+    align-self: center;  /* Prevent it from stretching to the bottom */
+    padding: 10px 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #0056b3;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#multi-unit-selection button:hover {
+    background-color: #003f7d;
+    transform: scale(1.05);
+}
+
+/* Style for the completion message */
+.completion-message {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+    margin-top: 10px;
+}
